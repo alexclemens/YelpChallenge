@@ -3,12 +3,6 @@ import yaml
 import requests
 
 
-food = 0
-inside = 0
-outside = 0
-
-label = 0
-caption = 0
 keys = ['food', 'inside', 'outside', 'label', 'caption', 'food_and_caption', 'food_and_no_caption']
 dictionary = dict.fromkeys(keys, 0)
 
