@@ -9,6 +9,8 @@ outside = 0
 
 label = 0
 caption = 0
+keys = ['food', 'inside', 'outside', 'label', 'caption']
+dictionary = dict.fromkeys(keys, 0)
 
 
 with open("photos.json") as myfile:
@@ -17,20 +19,20 @@ with open("photos.json") as myfile:
 for curr_string in curr:
 
     if curr_string.get('caption') != "":
-    	caption += 1
+    	dictionary['caption'] += 1
     if curr_string.get('label') == 'food':
-    	food+=1
-    	label+=1
+    	dictionary['food'] += 1
+        dictionary['label'] += 1
     elif curr_string.get('label') == 'inside':
-    	inside+=1
-    	label+=1
+    	dictionary['inside'] += 1
+    	dictionary['label'] += 1
     elif curr_string.get('label') == 'outside':
-    	outside+=1
-    	label+=1
+    	dictionary['outside'] += 1
+    	dictionary['label'] += 1
 
 #print curr
-print "reviews with a label: " + str(label)
-print "Label is food: " + str(food)
-print "Label is inside: " + str(inside)
-print "Label is outside: " + str(outside)
-print "reviews with captions: " +  str(caption)
+print "reviews with a label: " + str(dictionary['label'])
+print "Label is food: " + str(dictionary['food'])
+print "Label is inside: " + str(dictionary['inside'])
+print "Label is outside: " + str(dictionary['outside'])
+print "reviews with captions: " +  str(dictionary['caption'])
